@@ -1,72 +1,67 @@
-import HoverText from "@/app/shared/HoverText";
-import Social from "@/app/shared/cards/Social";
+"use client";
 import Link from "next/link";
-import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="bg-[#151617] text-white">
-      <div className="grid md:grid-cols-2 py-20 container-lg px-5 gap-x-5 gap-y-10">
-        <div className="text-5xl max-w-[430px]">
-          Crafting Excellence, One Hanger at a Time.
-        </div>
-        <div className="grid grid-cols-2 max-[450px]:grid-cols-1 gap-5 max-[450px]:gap-8">
-          <div className="space-y-6 max-w-64">
-            <div className="text-xl font-semibold">Address</div>
-            <p className="text-lg text-[#d2d3d5]">
-              695, Sector 37, Pace City 2, Gurugram, Haryana-122001
-            </p>
-            {/* <div className="flex gap-x-5">
-              <Social link="">
-                <FaFacebookF />
-              </Social>
-              <Social link="">
-                <FaTwitter />
-              </Social>
-              <Social link="">
-                <FaInstagram />
-              </Social>
-            </div> */}
-          </div>
-          <div className="space-y-6 max-w-64">
-            <div className="text-xl font-semibold">Say Hello</div>
-            <div>
-              <HoverText
-                text="kavihangbro@gmail.com"
-                link="mailto:kavihangbro@gmail.com"
-                styleBottomLine="group-hover:w-40"
+    <div className="sm:px-8 sm:pb-8 px-5 pb-5 mt-20">
+      <div className="bg-[#171408] p-10 rounded-3xl text-white">
+        <div className="md:flex justify-between gap-y-[10px] space-y-10">
+          <div className="space-y-5 md:max-w-[300px]">
+            <div className="space-y-[10px]">
+              <div className="text-lg">Sign up to NexWorld</div>
+              <p className="text-neutral-400">
+                Your design partner to facilitate your growth journey.
+              </p>
+            </div>
+            <div className="relative flex items-center">
+              <input
+                className="h-14 rounded-full pl-5 text-sm bg-white outline-none w-full"
+                placeholder="your@email.com"
               />
-            </div>
-            <div>
-              <Link
-                href="tel:+91 99102 33400"
-                className="text-xl cursor-pointer font-semibold"
-              >
-                +91 99102 33400
-              </Link>
+              {/* <Button className="absolute right-0 h-11 mr-2">Sign Up</Button> */}
             </div>
           </div>
+          <ul className="space-y-[10px] mr-20">
+            {[
+              { label: "About", link: "#About" },
+              { label: "Contact", link: "#Contact" },
+              { label: "Pricing", link: "#Pricing" },
+              { label: "Testimonials", link: "#Testimonials" },
+            ]?.map((item, idx) => (
+              <li
+                key={idx}
+                className="text-neutral-400 hover:text-white duration-500 cursor-pointer"
+              >
+                <a href={item.link} className="block">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-      <div className="h-[1px] w-full bg-neutral-600" />
-      <div className="flex md:flex-row gap-y-4 flex-col items-center md:justify-between justify-center container-lg px-5 py-6">
-        <div className="flex gap-x-6">
-          {[
-            { label: "About Us", link: "/about" },
-            { label: "Our Products", link: "/products" },
-            { label: "Contact", link: "/contact" },
-          ]?.map((item, idx) => (
-            <HoverText
-              key={idx}
-              text={item?.label}
-              link={item?.link}
-              styleBottomLine="!w-0 group-hover:!w-full"
-            />
-          ))}
-        </div>
-        <div className="sm:text-lg text-sm text-[#d2d3d5]">
-          Kavi Hangers © 2024. All Rights Reserved.
+        <div className="h-[1px] bg-neutral-600 w-full mt-20" />
+        <div className="mt-5 flex justify-between md:items-center">
+          <div className="text-white text-xs md:flex-row flex-col flex gap-3">
+            <div> Design by Dk</div>
+            <ul className="text-[#646464] gap-3 md:flex-row flex-col flex">
+              <li>&copy; 2024 NexWorld</li>
+              <li>All rights reserved</li>
+              <li>All images are for demo purpose only</li>
+            </ul>
+          </div>
+          <div className="flex gap-x-3">
+            <Link href="" target="_blank" rel="noopener noreferrer">
+              <AiFillInstagram
+                className="text-white hover:rotate-[360deg] duration-500 cursor-pointer"
+                size={30}
+              />
+            </Link>
+            {/* <FaTwitter
+            className="text-white hover:rotate-[360deg] duration-500 cursor-pointer"
+            size={20}
+          /> */}
+          </div>
         </div>
       </div>
     </div>

@@ -1,14 +1,12 @@
-import { ProductContext } from "@/app/contexts/Context";
-import Img from "@/app/shared/Img";
-import ListItem from "@/app/shared/ListItem";
+"use client";
 import { usePathname, useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { SlBag } from "react-icons/sl";
+import Img from "../../shared/Img";
+import ListItem from "../../shared/ListItem";
 
 const Navbar = () => {
   const router = useRouter();
-  const { data, setData } = useContext(ProductContext);
 
   useEffect(() => {
     const slideNav = () => {
@@ -25,38 +23,38 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", slideNav);
   }, []);
 
-  useEffect(() => {
-    setData({
-      cart: JSON.parse(window.localStorage.getItem("cart") || "[]"),
-    });
-  }, [setData]);
   const pathname = usePathname();
   const [isActive, setIsActive] = useState("");
   const routes = [
     { name: "Home", path: "/", key: "home" },
-    { name: "Our Products", path: "/products", key: "products" },
-    { name: "About", path: "/about", key: "about" },
+    { name: "Shop", path: "/", key: "shop" },
+    { name: "Pages", path: "/", key: "pages" },
+    {
+      name: "Blog",
+      path: "/",
+      key: "blog",
+    },
     {
       name: "Contact Us",
       path: "/contact",
       key: "contact",
     },
   ];
-  // useScrollHidden(isActive === "ENQUIRY_MODAL");
 
   return (
     <>
-      <div className="sticky z-20 px-5" id="navbar">
+      <div className="sticky z-20 px-5 shadow-bottom" id="navbar">
         <div
-          className={`flex items-center relative z-10 justify-between py-8 ${pathname?.includes("/products") ? "container sm:px-5 mx-auto" : "container-sm"}`}
+          className={`flex items-center relative z-10 justify-between py-6 container-sm`}
         >
           <Img
             alt=""
-            src="/images/icons/logo.png"
+            src="/images/logo.svg"
             isLocal
-            height={20}
-            width={202.21}
+            height={40}
+            width={100}
             role="button"
+            className="h-10 object-cover"
             onClick={() => router.push("/")}
           />
           <div className="flex gap-x-8 items-center">
@@ -73,26 +71,13 @@ const Navbar = () => {
                 />
               ))}
             </ul>
-            <div className="flex items-center gap-x-6">
-              <div className="flex items-center w-fit gap-x-8">
-                <div
-                  className="relative cursor-pointer"
-                  onClick={() => router.push("/cart")}
-                >
-                  <SlBag className="h-[34px] w-[22px]" />
-                  <div className="h-[15px] w-[15px] bg-primary flex items-center justify-center text-[10px] text-white rounded-full absolute -right-1 font-bold bottom-0">
-                    {data?.cart?.length}
-                  </div>
-                </div>
-              </div>
-              <GiHamburgerMenu
-                className="sm:hidden"
-                size={24}
-                onClick={() =>
-                  setIsActive(isActive === "SIDEBAR" ? "" : "SIDEBAR")
-                }
-              />
-            </div>
+            <GiHamburgerMenu
+              className="sm:hidden"
+              size={24}
+              onClick={() =>
+                setIsActive(isActive === "SIDEBAR" ? "" : "SIDEBAR")
+              }
+            />
           </div>
         </div>
         {/* {isActive === "ENQUIRY_MODAL" && (
