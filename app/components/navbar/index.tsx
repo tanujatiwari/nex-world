@@ -92,11 +92,12 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             <Img
               alt=""
-              src="/images/icons/logo.png"
+              src="/images/logo.svg"
               isLocal
-              height={20}
-              width={202.21}
+              height={40}
+              width={100}
               role="button"
+              className="h-10 object-cover"
               onClick={() => router.push("/")}
             />
             <div

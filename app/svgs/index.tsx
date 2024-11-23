@@ -1,4 +1,6 @@
-export const SvgArc = (props: any) => (
+import { SVGProps } from "react";
+
+export const SvgArc = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="20"
     height="20"

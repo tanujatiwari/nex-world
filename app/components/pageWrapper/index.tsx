@@ -12,7 +12,11 @@ interface IPageWraps {
   wrapperClass?: string;
   isNavbar?: boolean;
   navClass?: string;
-  seo?: any;
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    meta?: { name: string; property: string; content: string; id: string }[];
+  };
 }
 
 const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
@@ -83,12 +87,12 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
           <meta name="theme-color" content="#ffffff" />
           {/* Favicon section end */}
 
-          {seo?.meta?.map((meta: any) => (
+          {seo?.meta?.map((e) => (
             <meta
-              name={meta.name}
-              property={meta.property}
-              key={meta.id}
-              content={meta.content}
+              name={e.name}
+              property={e.property}
+              key={e.id}
+              content={e.content}
             />
           ))}
         </Head>

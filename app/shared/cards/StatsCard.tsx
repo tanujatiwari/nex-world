@@ -1,5 +1,4 @@
-import React, { ReactNode } from "react";
-import Img from "../Img";
+import { ReactNode } from "react";
 
 const StatsCard = ({
   data,
