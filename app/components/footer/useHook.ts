@@ -2,15 +2,15 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import {
-    ERROR_TOAST_CONFIG,
-    SUCCESS_TOAST_CONFIG,
+  ERROR_TOAST_CONFIG,
+  SUCCESS_TOAST_CONFIG,
 } from "../../../utils/static";
 import ToastMessage from "../../shared/ToastMessage";
 
 const useHook = () => {
   const [value, setValue] = useState("");
   const handleSubmit = () => {
-    var templateParams = {
+    const templateParams = {
       name: "NexWorld",
       email: value,
       message: `email:${value}`,
