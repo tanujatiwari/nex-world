@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
 import { AiFillInstagram } from "react-icons/ai";
+import useHook from "./useHook";
 
 const Footer = () => {
+  const { handleSubmit, setValue, value } = useHook();
   return (
     <div className="sm:px-8 sm:pb-8 px-5 pb-5 mt-20">
       <div className="bg-[#171408] p-10 rounded-3xl text-white">
@@ -14,13 +16,24 @@ const Footer = () => {
                 Your design partner to facilitate your growth journey.
               </p>
             </div>
-            <div className="relative flex items-center">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+              className="relative flex items-center"
+            >
               <input
-                className="h-14 rounded-full pl-5 text-sm bg-white outline-none w-full"
+                className="h-14 rounded-full pl-5 pr-[104px] text-sm text-black bg-white outline-none w-full"
                 placeholder="your@email.com"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                required
               />
-              {/* <Button className="absolute right-0 h-11 mr-2">Sign Up</Button> */}
-            </div>
+              <button className="absolute right-0 h-11 mr-2 bg-[#4a101d] px-4 rounded-full duration-300 hover:bg-[#410d18]">
+                Sign Up
+              </button>
+            </form>
           </div>
           <ul className="space-y-[10px] mr-20">
             {[

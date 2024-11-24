@@ -30,7 +30,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <div
+          className="elfsight-app-55359b98-c5f3-4e4b-948e-1ef6970778fa"
+          data-elfsight-app-lazy
+        ></div>
       </body>
+      <script
+        src="https://static.elfsight.com/platform/platform.js"
+        async
+      ></script>
     </html>
   );
 }

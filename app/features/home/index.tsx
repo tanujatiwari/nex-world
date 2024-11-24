@@ -64,7 +64,7 @@ const Home = () => {
     nextArrow: <ArrowLeft />,
     prevArrow: <ArrowRight />,
   };
-  return ( 
+  return (
     <div className="container-sm mx-auto space-y-20 mt-10 px-5">
       <div className="md:text-6xl sm:text-5xl text-3xl font-semibold md:leading-[74px] text-center">
         Elevate Your Lifestyle with Our Next generation Kitchen, Wardrobes &
@@ -72,41 +72,41 @@ const Home = () => {
       </div>
       <div className="space-y-3">
         <Slider {...settings} dots={false}>
-          {Array(3)
-            .fill("/images/heroImage.jpeg")
-            ?.map((item, idx) => (
-              <Img
-                key={idx}
-                src={item}
-                height={600}
-                width={600}
-                alt=""
-                isLocal
-                className="rounded-[20px]"
-              />
-            ))}
+          {["/images/slide1.mp4", "/images/slide2.mp4"].map((item, idx) => (
+            <video
+              key={idx}
+              src={item}
+              className="rounded-[20px] max-h-[490px] object-cover"
+              autoPlay
+              muted
+              loop={true}
+              height={490}
+              width={600}
+            ></video>
+          ))}
         </Slider>
-        <div className="grid grid-cols-12 gap-3">
-          {/* <div className="flex md:flex-row w-full flex-col gap-3"> */}
-          <div className="grid sm:grid-cols-2 gap-3 lg:col-span-8 col-span-12">
+        <div className="grid grid-cols-12 gap-3 max-h-[350px]">
+          <div className="grid sm:grid-cols-2 gap-3 lg:col-span-8 col-span-12 max-h-[350px]">
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Kitchen" }}
+              data={{ image: "/images/wardrobes.png", text: "Wardrobes" }}
             />
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Wardrobes" }}
+              data={{ image: "/images/kitchen.jpg", text: "Kitchen" }}
             />
           </div>
 
           <div className="gap-3 lg:space-y-3 lg:block grid sm:grid-cols-2 lg:col-span-4 col-span-12">
             <ProductCard
+              className="max-h-[168px]"
               data={{
-                image: "/images/heroImage.jpeg",
+                image: "/images/doors.jpg",
                 text: "Doors & Windows",
               }}
             />
             <ProductCard
+              className="max-h-[168px]"
               data={{
-                image: "/images/heroImage.jpeg",
+                image: "/images/barUnit.jpg",
                 text: "Cabinetry & Bar Units",
               }}
             />

@@ -159,6 +159,7 @@ export default {
       fontFamily: {
         sora: ["var(--font-inter)"],
       },
+    
     },
   },
   plugins: [],

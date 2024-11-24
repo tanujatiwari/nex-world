@@ -1,8 +1,8 @@
-import React, { FC, PropsWithChildren } from "react";
-import Img from "../Img";
 import clsx from "clsx";
+import { FC, PropsWithChildren } from "react";
 import { FiInstagram } from "react-icons/fi";
 import { SvgArc } from "../../svgs";
+import Img from "../Img";
 interface IProductCard {
   className?: string;
   data: { image: string; text: string };
@@ -27,7 +27,7 @@ const ProductCard: FC<PropsWithChildren<IProductCard>> = ({
         width={350}
         alt=""
         isLocal
-        className="rounded-[20px] h-full w-full group-hover:scale-110 duration-300"
+        className="rounded-[20px] h-full w-full object-center group-hover:scale-110 duration-300"
       />
 
       {children ? (

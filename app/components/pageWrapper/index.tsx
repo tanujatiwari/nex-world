@@ -2,12 +2,13 @@
 import Head from "next/head";
 import { FC, Fragment, PropsWithChildren, Suspense, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
-// import "react-toastify/dist/ReactToastify.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import "slick-carousel/slick/slick.css";
+import "react-toastify/dist/ReactToastify.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import Footer from "../footer";
 import Navbar from "../navbar";
 import { metaContent } from "../../../utils/seo";
+import { ToastContainer } from "react-toastify";
 interface IPageWraps {
   wrapperClass?: string;
   isNavbar?: boolean;
@@ -39,7 +40,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   return (
     <Suspense fallback={<div>...Loading</div>}>
       <Fragment>
-        {/* <ToastContainer stacked /> */}
+        <ToastContainer stacked />
         <Head>
           <title>{seo?.metaTitle ?? metaContent.TITLE}</title>
           <meta

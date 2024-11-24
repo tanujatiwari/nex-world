@@ -43,9 +43,9 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky z-20 px-5 shadow-bottom" id="navbar">
+      <div className="sticky z-30 px-5 shadow-bottom" id="navbar">
         <div
-          className={`flex items-center relative z-10 justify-between py-6 container-sm`}
+          className={`flex items-center relative z-20 justify-between py-6 container-sm`}
         >
           <Img
             alt=""
