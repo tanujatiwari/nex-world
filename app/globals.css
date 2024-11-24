@@ -8,7 +8,9 @@
 .container-sm {
   @apply max-w-[1280px] mx-auto;
 }
-
+* {
+  scroll-behavior: smooth;
+}
 #navbar.active {
   animation: fadeNav 0.7s linear forwards;
   background-color: white;

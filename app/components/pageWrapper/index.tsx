@@ -102,7 +102,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
           <div className={`${wrapperClass}`}>{children}</div>
           {isActive && (
             <div
-              className="z-10 w-12 h-8 hover:h-10 duration-300 bottom-0 left-10 rounded-t-md fixed cursor-pointer bg-primary flex items-center justify-center"
+              className="z-10 w-12 h-8 hover:h-10 duration-300 bottom-0 left-10 rounded-t-md fixed cursor-pointer bg-[#4A101D] flex items-center justify-center"
               onClick={() => window.scroll(0, 0)}
             >
               <IoIosArrowUp color="white" />
