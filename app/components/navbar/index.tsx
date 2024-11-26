@@ -29,13 +29,13 @@ const Navbar = () => {
   const [isActive, setIsActive] = useState("");
   const routes = [
     { name: "Home", path: "/", key: "home" },
-    { name: "Our Story", path: "/", key: "shop" },
+    { name: "Our Story", path: "#ourStory", key: "shop" },
     { name: "Our Services", path: "/", key: "pages" },
   ];
 
   return (
     <>
-      <div className="sticky z-30 px-5 shadow-bottom" id="navbar">
+      <div className="sticky z-30 px-5" id="navbar">
         <div
           className={`flex items-center relative z-20 justify-between py-6 container-sm`}
         >
