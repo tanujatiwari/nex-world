@@ -5,7 +5,7 @@ import { SvgArc } from "../../svgs";
 import Img from "../Img";
 interface IProductCard {
   className?: string;
-  data: { image: string; text: string };
+  data: { image: string; text: string; styleImage?: string };
   variant?: "social";
 }
 const ProductCard: FC<PropsWithChildren<IProductCard>> = ({
@@ -27,7 +27,10 @@ const ProductCard: FC<PropsWithChildren<IProductCard>> = ({
         width={350}
         alt=""
         isLocal
-        className="rounded-[20px] h-full w-full object-center group-hover:scale-110 duration-300"
+        className={clsx(
+          "rounded-[20px] h-full w-full group-hover:scale-110 duration-300",
+          data?.styleImage
+        )}
       />
 
       {children ? (

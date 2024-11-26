@@ -34,7 +34,7 @@ export default {
         disabled: colors.gray["400"],
       },
       textColor: {
-        primary: colors.gray["900"],
+        primary: "#4a101d",
         secondary: colors.gray["600"],
         "secondary-hover": colors.gray["800"],
         tertiary: colors.gray["500"],
@@ -81,7 +81,7 @@ export default {
         "btn-secondary-color-hover": "var(--brand-400)",
       },
       backgroundColor: {
-        primary: "#FFFFFF",
+        primary: "#4a101d",
         "primary-hover": colors.gray["50"],
         "primary-solid": colors.gray["950"],
         secondary: colors.gray["25"],
@@ -159,7 +159,6 @@ export default {
       fontFamily: {
         sora: ["var(--font-inter)"],
       },
-    
     },
   },
   plugins: [],

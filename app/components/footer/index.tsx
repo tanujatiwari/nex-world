@@ -30,7 +30,7 @@ const Footer = () => {
                 onChange={(e) => setValue(e.target.value)}
                 required
               />
-              <button className="absolute right-0 h-11 mr-2 bg-[#4a101d] px-4 rounded-full duration-300 hover:bg-[#410d18]">
+              <button className="absolute right-0 h-11 mr-2 bg-primary px-4 rounded-full duration-300 hover:bg-primary">
                 Sign Up
               </button>
             </form>

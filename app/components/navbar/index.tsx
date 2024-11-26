@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Img from "../../shared/Img";
 import ListItem from "../../shared/ListItem";
+import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 const Navbar = () => {
   const router = useRouter();
@@ -27,18 +29,8 @@ const Navbar = () => {
   const [isActive, setIsActive] = useState("");
   const routes = [
     { name: "Home", path: "/", key: "home" },
-    { name: "Shop", path: "/", key: "shop" },
-    { name: "Pages", path: "/", key: "pages" },
-    {
-      name: "Blog",
-      path: "/",
-      key: "blog",
-    },
-    {
-      name: "Contact Us",
-      path: "/contact",
-      key: "contact",
-    },
+    { name: "Our Story", path: "/", key: "shop" },
+    { name: "Our Services", path: "/", key: "pages" },
   ];
 
   return (
@@ -71,6 +63,11 @@ const Navbar = () => {
                 />
               ))}
             </ul>
+            <Link href={' '} className="flex items-center gap-x-2">
+              <FaWhatsapp size={20} className="text-primary" />
+              <span className="lg:block hidden"> Whatsapp</span>
+            </Link>
+
             <GiHamburgerMenu
               className="sm:hidden"
               size={24}

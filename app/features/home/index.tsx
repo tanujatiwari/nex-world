@@ -37,7 +37,7 @@ const Home = () => {
   const ArrowLeft = ({ onClick }: { onClick?: () => void }) => (
     <div
       onClick={onClick}
-      className="border border-tertiary bg-primary absolute z-20 top-[45%] left-5 duration-300 h-10 w-10 cursor-pointer rounded-full flex justify-center items-center"
+      className="border border-tertiary bg-white absolute z-20 top-[45%] left-5 duration-300 h-10 w-10 cursor-pointer rounded-full flex justify-center items-center"
     >
       <IoIosArrowBack size={18} className="text-black mr-[2px]" />
     </div>
@@ -46,7 +46,7 @@ const Home = () => {
   const ArrowRight = ({ onClick }: { onClick?: () => void }) => (
     <div
       onClick={onClick}
-      className="border border-tertiary bg-primary absolute z-20 top-[45%] right-5 h-10 w-10 duration-300 cursor-pointer rounded-full flex justify-center items-center"
+      className="border border-tertiary bg-white absolute z-20 top-[45%] right-5 h-10 w-10 duration-300 cursor-pointer rounded-full flex justify-center items-center"
     >
       <IoIosArrowForward size={18} className="text-black ml-1" />
     </div>
@@ -61,37 +61,61 @@ const Home = () => {
     waitForAnimate: false,
     autoplay: true,
     autoplaySpeed: 3000,
-    nextArrow: <ArrowLeft />,
-    prevArrow: <ArrowRight />,
+    nextArrow: <ArrowRight />,
+    prevArrow: <ArrowLeft />,
+  };
+  const HERO_VERTICAL_SETTING = {
+    autoplay: true,
+    vertical: true,
+    verticalSwiping: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
   };
   return (
     <div className="container-sm mx-auto space-y-20 mt-10 px-5">
-      <div className="md:text-6xl sm:text-5xl text-3xl font-semibold md:leading-[74px] text-center">
-        Elevate Your Lifestyle with Our Next generation Kitchen, Wardrobes &
-        More
+      <div className="md:text-6xl sm:text-5xl text-3xl font-semibold md:leading-[74px] sm:text-start text-center">
+        Elevate Your Lifestyle<br></br>{" "}
+        <div className="flex gap-x-3">
+          with Our Next generation{" "}
+          <Slider
+            {...HERO_VERTICAL_SETTING}
+            className="sm:max-w-[475px] max-w-[230px]"
+          >
+            {["Kitchen", "Wardrobes", "& More"]?.map((item, idx) => (
+              <span className="text-primary" key={idx}>
+                {item}
+              </span>
+            ))}
+          </Slider>
+        </div>
       </div>
       <div className="space-y-3">
         <Slider {...settings} dots={false}>
-          {["/images/slide1.mp4", "/images/slide2.mp4"].map((item, idx) => (
-            <video
-              key={idx}
+          {[
+            "/images/slide1.png",
+            "/images/slide2.png",
+            "/images/slide3.png",
+          ].map((item, idx) => (
+            <Img
               src={item}
+              key={idx}
+              alt={item}
               className="rounded-[20px] max-h-[490px] object-cover"
-              autoPlay
-              muted
-              loop={true}
               height={490}
-              width={600}
-            ></video>
+              width={1000}
+              isLocal
+            />
           ))}
         </Slider>
         <div className="grid grid-cols-12 gap-3 max-h-[350px]">
           <div className="grid sm:grid-cols-2 gap-3 lg:col-span-8 col-span-12 max-h-[350px]">
             <ProductCard
-              data={{ image: "/images/wardrobes.png", text: "Wardrobes" }}
+              data={{ image: "/images/kitchen.png", text: "Kitchen" }}
             />
             <ProductCard
-              data={{ image: "/images/kitchen.jpg", text: "Kitchen" }}
+              data={{ image: "/images/wardrobes.png", text: "Wardrobes" }}
             />
           </div>
 
@@ -99,7 +123,7 @@ const Home = () => {
             <ProductCard
               className="max-h-[168px]"
               data={{
-                image: "/images/doors.jpg",
+                image: "/images/doors.png",
                 text: "Doors & Windows",
               }}
             />
@@ -108,6 +132,7 @@ const Home = () => {
               data={{
                 image: "/images/barUnit.jpg",
                 text: "Cabinetry & Bar Units",
+                styleImage: "object-[0px_-100px]",
               }}
             />
           </div>
@@ -166,6 +191,9 @@ const Home = () => {
           isLocal
           className="rounded-[20px] w-full md:h-full h-[400px]"
         />
+        <div className="h-4 w-4 flex animate-ping justify-center animate items-center top-1/2 border border-white absolute bg-transparent z-20 rounded-full">
+          <div className="h-[10px] w-[10px] bg-white rounded-full"></div>
+        </div>
         <div className="absolute top-0 right-0 flex flex-col">
           <div className="bg-white relative w-max uppercase ml-auto font-medium py-3 px-7 self-end">
             <SvgArc
@@ -271,40 +299,41 @@ const Home = () => {
           <p className="text-lg text-secondary lg:text-start text-center">
             Visit our prestigious projects all over the world.
           </p>
+          <button />
         </div>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-4 relative lg:col-span-8 col-span-12">
           <div className="space-y-4">
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Bedroom" }}
+              data={{ image: "/images/social1.png", text: "Bedroom" }}
               className="md:h-[300px] h-[600px]"
               variant="social"
             />
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Bedroom" }}
+              data={{ image: "/images/social4.png", text: "Bedroom" }}
               className="md:h-[162px] h-[300px]"
               variant="social"
             />
           </div>
           <div className="space-y-4">
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Bedroom" }}
+              data={{ image: "/images/social2.png", text: "Bedroom" }}
               className="md:h-[162px] h-[300px]"
               variant="social"
             />
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Bedroom" }}
+              data={{ image: "/images/social5.png", text: "Bedroom" }}
               className="md:h-[300px] h-[600px]"
               variant="social"
             />
           </div>
           <div className="space-y-4">
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Bedroom" }}
+              data={{ image: "/images/social3.png", text: "Bedroom" }}
               className="md:h-[300px] h-[600px]"
               variant="social"
             />
             <ProductCard
-              data={{ image: "/images/heroImage.jpeg", text: "Bedroom" }}
+              data={{ image: "/images/social6.png", text: "Bedroom" }}
               className="md:h-[162px] h-[300px]"
               variant="social"
             />
