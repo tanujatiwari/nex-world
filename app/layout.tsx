@@ -22,10 +22,10 @@ export default function RootLayout({
           data-elfsight-app-lazy
         ></div>
       </body>
-      <script
+      {/* <script
         src="https://static.elfsight.com/platform/platform.js"
         async
-      ></script>
+      ></script> */}
     </html>
   );
 }

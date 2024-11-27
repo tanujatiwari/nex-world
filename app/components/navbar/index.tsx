@@ -49,7 +49,7 @@ const Navbar = () => {
             className="h-10 object-cover"
             onClick={() => router.push("/")}
           />
-          <div className="flex gap-x-8 items-center">
+          <div className="flex md:gap-x-8 gap-x-4 items-center">
             <ul className="lg:flex hidden w-fit gap-x-8 font-semibold">
               {routes.map((item, idx) => (
                 <ListItem

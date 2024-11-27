@@ -39,6 +39,7 @@
   animation: fadeNav 0.7s linear forwards;
   background-color: white;
   top: 0;
+  background-color: #fcf5f0;
   @apply shadow-bottom;
 }
 @keyframes fadeNav {
@@ -59,7 +60,7 @@
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
   animation-duration: 1s;
-  /* background-color: #fcf5f0; */
+  background-color: #fcf5f0;
 }
 #sideBar {
   animation: sideNav 0.4s linear forwards;
